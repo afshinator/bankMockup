@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Awesome Bank - Accounts">
+
+    <title>Awesome Bank &ndash; Accounts</title>
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="css/layouts/marketing.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="lib/jquery-2.1.1.min.js"></script>
+
+    <style>
+    </style>
+</head>
+
+<body>
+
+
+<div class="header info-strip">
+    <div class="pure-menu pure-menu-horizontal desktop">
+
+        <div id="brand">
+            <!-- AwesomeBank Logo Here -->
+        </div>
+
+        <ul class="pure-menu-list right">
+            <!-- <li class="pure-menu-item "><a href="#" class="pure-menu-link">Accounts</a></li> -->
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="menuLink1" class="pure-menu-link">Help & Support</a>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+                </ul>
+            </li>
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="menuLink1" class="pure-menu-link">Settings</a>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Stuff</a></li>
+                </ul>
+            </li>
+
+            <img id="signOutBtn" src="img/signOut1.jpg" alt="Sign Out" height="33px" width="98px">
+        </ul>
+    </div>
+</div>
+
+
+<section class='info-strip white'>
+    <div id="welcomeMsg" class="desktop">
+        <h4>Welcome, Chris</h4>
+        <small>Last sign-in April 28 10:48 AM PT</small>
+    </div>
+</section>
+
+
+
+<div class="desktop">
+
+    <div class="content">
+
+    <div id="rightBalancesCover"></div>
+    <div id="leftBalancesCover"></div>
+
+        <div id="accounts" class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-3"> left side</div>
+            <div id="bankAccountsData" class="pure-u-1 pure-u-md-2-3">
+                <ul>
+                    <li>
+                        <span class="balance floatRight">$0</span>                    
+                        <p class="balanceTitle"></p>
+                        <small class="accountDetails"> 
+                        </small>
+                        <br>
+                    </li>
+
+                    <li>
+                        <span class="balance floatRight">$0</span>                    
+                        <p class="balanceTitle"></p>
+                        <small class="accountDetails"><!-- Checking #7598 -->
+                        </small>
+                    </li>
+
+                    <li>
+                        <span class="balance floatRight">$0</span>                    
+                        <p class="balanceTitle"></p>
+                        <small class="accountDetails"><!-- Savings #6002 -->
+
+                        </small>
+                    </li> 
+                    <li>
+                        <span class="balance floatRight">$0</span>                    
+                        <p class="balanceTitle"></p>
+                        <small class="accountDetails"><!-- Savings #6002 -->
+                        </small>
+                    </li>
+                    <li>
+                        <span class="balance floatRight">$0</span>                    
+                        <p class="balanceTitle"></p>
+                        <img id="wellsfargo" src="img/wellsFargo.jpg" alt="wells fargo" width="62px"><small class="accountDetails"><!-- Savings #6002 -->
+                        </small>
+                    </li>                     
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="moneyChart" class="content">
+        <div> <small><i class="fa fa-caret-down"></i> Financial Tools</small>
+        </div>
+        <img src="img/chart1.png" alt="Where is my money?" height="296px" width="446px">
+    </div>
+
+    <div id="wealthMgmt" class="content">
+        <img src="img/wealth.jpg" alt="Private Wealth Mgmt" height="167px" width="667px">
+    </div>
+
+</div>
+
+
+
+
+<script src="src/populateData.js"></script>
+
+</body>
+</html>

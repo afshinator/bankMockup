@@ -1,0 +1,34 @@
+{
+  "bank": "$3,560,403.48",
+  "loans": "$1,810,000.00",
+  "investments": "$3,467,099.09",
+  "credit": "$1,000.00",
+  "accounts": [
+    {
+      "title": "Family Checking",
+      "type": "Checking #1234",
+      "balance": "$257,473.34",
+      "xtra": "Available overdraft line of credit #0112 $8,000"
+    },
+    {
+      "title": "Tahoe House",
+      "type": "Checking #7598",
+      "balance": "$569,206.22"
+    },
+    {
+      "title": "College Fund",
+      "type": "Savings #2211",
+      "balance": "$750,000.00"
+    },
+    {
+      "title": "Vacation",
+      "type": "Savings #6002",
+      "balance": "$1,598,002.84"
+    },
+    {
+      "title": "Chris & Pat Hostler Account",
+      "type": "Savings #3456",
+      "balance": "$385,721.08"
+    }
+  ]
+}

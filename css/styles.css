@@ -1,0 +1,233 @@
+/* Custom styles on top of Pure CSS
+*/
+
+.content {
+	/*border: 1px solid red;*/
+	margin-top:40px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background: white;
+	-webkit-box-shadow: 0 1px 7px -2px #ddd;
+	box-shadow: 0 1px 7px -2px #ddd;	
+}
+
+#rightBalances {
+	backbground: url(../img/balances-right.png) top right no-repeat;
+}
+
+body {
+    background: #f6f6f6;
+}
+
+.info-strip {
+    height: 65px;
+}
+
+.info-strip h4 {
+    font-family: serif;
+    font-weight: normal;
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: .7em;
+}
+
+.info-strip small {
+    font-size: .5em;
+    color: black;
+}
+
+.header {
+    background: #165642;
+    font-size: 13px;
+}
+
+.desktop {
+    width: 750px;
+    margin: 0 auto;
+    /*border: 1px dotted red;*/
+}
+
+
+.white {
+    background: #fff;
+}
+
+.right {
+    margin-left: 28%;
+}
+
+.floatRight {
+	float: right;
+}
+
+/* specific elements */
+
+#rightBalancesCover {
+	display: none;
+	position: absolute;
+	margin:0 auto;
+	top: 170px;
+	/*right:0;*/
+	width: 502px;
+	height: 320px;
+	/*background: blue;*/
+	background: url(../img/balances-right.png) top right no-repeat;
+	opacity: .8;
+}
+
+#leftBalancesCover {
+	/*display: none;*/
+	position: absolute;
+	top: 170px;
+	left: 160px;
+	width: 260px;
+	height: 310px;
+	background: #f6f6f6;
+	/*opacity: .3;*/
+}
+
+#leftBalancesCover small {
+	font-size: .5em;
+}
+
+
+#left-topWrapper {
+	background: white;
+	padding-left: 1em;
+	padding-top: .5em;
+	-webkit-box-shadow: 0 1px 7px -2px #ddd;
+	box-shadow: 0 1px 7px -2px #ddd;	
+}
+
+.left-wrapper {
+	padding-left: 1em;
+	padding-top: .5em;
+	padding-bottom: 1.4em;
+}
+
+
+#brand {
+	float: left;
+	bottom: 0 ;
+	background: url(../img/brand.png) bottom left no-repeat;
+	height: 42px;
+	width: 228px;
+}
+
+#welcomeMsg {
+	padding-left: 30px;
+	padding-top: 20px;
+}
+
+#signOutBtn {
+	float: right;
+	margin-top: 4px;
+	margin-left: 20px;
+}
+
+#wellsfargo {
+	float: left;
+	margin-top: 2px;
+	margin-left: -5px;
+}
+
+#accounts li {
+	line-height: .8em;
+	list-style-type:none;
+
+	/*list-style-image: url('../img/bullet.png');*/
+}
+
+.balanceTitle {
+	color: #555;
+	/*font-size: .9em;*/
+	/*font-weight: lighter;*/
+	margin:0;
+}
+
+.balance {
+/*	float:right;
+*/	color: #555;
+	font-size: 1em;
+	font-weight: lighter;
+}
+
+
+.accountDetails {
+	color: #bbb;
+	font-size: .5em;
+}
+
+
+ul li:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 0px;
+    background: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+
+#wealthMgmt img {
+	margin-left: 28px;
+	margin-top:7px;
+}
+
+
+#moneyChart { padding:0; }
+#moneyChart small {
+	font-size: .7em;
+	color: #555;
+	font-weight: lighter;
+}
+#moneyChart div {
+	background: #e8e8e6;
+	padding-left: 8px;
+}
+
+#moneyChart img {
+	margin-left: 130px;
+	margin-top:15px;
+}
+
+
+section:first-of-type {
+	-webkit-box-shadow: 0 1px 7px -2px #ddd;
+	box-shadow: 0 1px 7px -2px #ddd;
+}
+
+
+
+/* Balances on the left */
+.left-heading {
+	font-size: .5em;
+	line-height: .5em;
+	margin-bottom: .5em;
+}
+
+.left-amount {
+	font-weight: lighter;
+	font-size: 2em;
+	margin-top: .3em;
+	margin-bottom: 0;
+}
+
+
+
+
+/* over-ride pure css */
+.pure-menu-horizontal {
+    padding-top:23px;
+}
+
+.pure-menu-link {
+    color: white;
+    font-size: .9em;
+}
