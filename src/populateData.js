@@ -1,6 +1,8 @@
 $(function() {
     var dataEndpoint = "http://localhost:8000/data/data.json",
     	resizeTriggered = false,
+    	haveCents = false,
+    	centsObj = {},
     	$rbc = $( '#rightBalancesCover' ),
     	$lbc = $( '#leftBalancesCover' ),
 
@@ -43,11 +45,38 @@ $(function() {
     		r = ~~(( $('body').width() - w)/ 2);
 
     	$content.css( 'height', '300px' );
-    	$lbc.css( 'left', r - 17 );
-    	$rbc.css( 'right', r - 17 )
+    	$lbc.css( 'left', r - 17 );				// the Left side  balances
+    	$rbc.css( 'right', r - 17 )				// the right side accounts balances
     		.fadeIn( 'slow', getData );
 
     	resizeTriggered = false;  // refresh flag to allow refresh
+    },
+
+
+    updateCentsOnLeft = function() {
+    	var $leftTopWrapper = $( '#left-topWrapper'),
+    		$leftWrapper = $( '.left-wrapper' ),
+    		cents = '<div style="position:absolute; font-size:.85em; color: #34495e"></div>';
+
+    	var bankCn = $( cents ).text( centsObj.bankC );
+    	bankCn.css( 'top', $leftTopWrapper.position().top + 23 );
+    	bankCn.css( 'left', $leftTopWrapper.position().left + $leftTopWrapper.width() - 72 );
+    	$leftTopWrapper.append( bankCn );
+
+    	var credit = $( cents ).text( centsObj.creditC );
+    	credit.css( 'top', $leftWrapper.eq(0).position().top + 23 );
+    	credit.css( 'left', $leftWrapper.eq(0).position().left + $leftWrapper.width() - 72 );
+    	$leftWrapper.append( credit );
+
+    	var inv = $( cents ).text( centsObj.investmentsC );
+    	inv.css( 'top', $leftWrapper.eq(1).position().top + 23 );
+    	inv.css( 'left', $leftWrapper.eq(1).position().left + $leftWrapper.width() - 72 );
+    	$leftWrapper.append( inv );
+
+    	var loans = $( cents ).text( centsObj.investmentsC );
+    	loans.css( 'top', $leftWrapper.eq(2).position().top + 23 );
+    	loans.css( 'left', $leftWrapper.eq(2).position().left + $leftWrapper.width() - 130 );
+    	$leftWrapper.append( loans ); 
     },
 
 
@@ -58,27 +87,37 @@ $(function() {
     		loans = json.loans,
     		html = '';
 
+    	centsObj = { 
+    		bankC : bank.substring( bank.length - 2 ),
+    		creditC : credit.substring( credit.length - 2 ),
+    		investmentsC : investments.substring( investments.length - 2 ),
+    		loansC : loans.substring( loans.length - 2 )
+    	};
+
+    	haveCents = true;
 
     	html = '<div id="left-topWrapper"><p class="left-heading">CHECKING, SAVINGS, & CDS</p>';
-    	html += '<h3 class="left-amount">' + bank + '</h3>';
+    	html += '<h3 class="left-amount">' + bank.substring( 0, bank.length - 3 ) + '</h3>';
     	html += '<small>available</small></div>';
 
     	html += '<div class="left-wrapper">';
     	html += '<p class="left-heading">LOANS</p>';
-    	html += '<h3 class="left-amount">' + loans + '</h3>';
+    	html += '<h3 class="left-amount">' + loans.substring( 0, loans.length - 3 ) + '</h3>';
     	html += '</div>';
 
     	html += '<div class="left-wrapper">';
     	html += '<p class="left-heading">INVESTMENTS</p>';
-    	html += '<h3 class="left-amount">' + investments + '</h3>';    	
+    	html += '<h3 class="left-amount">' + investments.substring( 0, investments.length - 3 ) + '</h3>';    	
     	html += '</div>';
 
     	html += '<div class="left-wrapper">';
     	html += '<p class="left-heading">CREDIT CARDS</p>';
-    	html += '<h3 class="left-amount">' + credit + '</h3>';
+    	html += '<h3 class="left-amount">' + credit.substring( 0, credit.length - 3 ) + '</h3>';
     	html += '</div>';
 
     	$lbc.html( html );
+
+    	updateCentsOnLeft();
     },
 
 
@@ -92,9 +131,7 @@ $(function() {
     }();
 
 
-    // If the browser gets resized, we want to update where we put the 
-    // horizontal dividers for the right-side balances, 
-    // 
+    // When the browser gets resized, update some of the placements
     $(window).on( 'resize', function() {
     	if ( resizeTriggered ) return;
     	else {

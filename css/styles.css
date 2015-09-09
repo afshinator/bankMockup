@@ -11,6 +11,8 @@
 	box-shadow: 0 1px 7px -2px #ddd;	
 }
 
+
+
 #rightBalances {
 	backbground: url(../img/balances-right.png) top right no-repeat;
 }
@@ -213,8 +215,10 @@ section:first-of-type {
 }
 
 .left-amount {
+/*	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;*/
 	font-weight: lighter;
-	font-size: 2em;
+	font-size: 1.9em;
 	margin-top: .3em;
 	margin-bottom: 0;
 }
@@ -230,4 +234,8 @@ section:first-of-type {
 .pure-menu-link {
     color: white;
     font-size: .9em;
+}
+
+footer {
+	background: white;
 }
