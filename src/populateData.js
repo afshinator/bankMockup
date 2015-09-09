@@ -56,26 +56,26 @@ $(function() {
     updateCentsOnLeft = function() {
     	var $leftTopWrapper = $( '#left-topWrapper'),
     		$leftWrapper = $( '.left-wrapper' ),
-    		cents = '<div style="position:absolute; font-size:.85em; color: #34495e"></div>';
+    		cents = '<div class="cents"></div>';
 
     	var bankCn = $( cents ).text( centsObj.bankC );
     	bankCn.css( 'top', $leftTopWrapper.position().top + 23 );
-    	bankCn.css( 'left', $leftTopWrapper.position().left + $leftTopWrapper.width() - 72 );
+    	bankCn.css( 'left', $leftTopWrapper.position().left + $leftTopWrapper.width() - 50 );
     	$leftTopWrapper.append( bankCn );
 
     	var credit = $( cents ).text( centsObj.creditC );
     	credit.css( 'top', $leftWrapper.eq(0).position().top + 23 );
-    	credit.css( 'left', $leftWrapper.eq(0).position().left + $leftWrapper.width() - 72 );
+    	credit.css( 'left', $leftWrapper.eq(0).position().left + $leftWrapper.width() - 50 );
     	$leftWrapper.append( credit );
 
     	var inv = $( cents ).text( centsObj.investmentsC );
     	inv.css( 'top', $leftWrapper.eq(1).position().top + 23 );
-    	inv.css( 'left', $leftWrapper.eq(1).position().left + $leftWrapper.width() - 72 );
+    	inv.css( 'left', $leftWrapper.eq(1).position().left + $leftWrapper.width() - 50 );
     	$leftWrapper.append( inv );
 
-    	var loans = $( cents ).text( centsObj.investmentsC );
+    	var loans = $( cents ).text( centsObj.loansC );
     	loans.css( 'top', $leftWrapper.eq(2).position().top + 23 );
-    	loans.css( 'left', $leftWrapper.eq(2).position().left + $leftWrapper.width() - 130 );
+    	loans.css( 'left', $leftWrapper.eq(2).position().left + $leftWrapper.width() - 117 );
     	$leftWrapper.append( loans ); 
     },
 
@@ -120,6 +120,13 @@ $(function() {
     	updateCentsOnLeft();
     },
 
+    placeTeamTab = function() {
+    	var $myTeamTab = $( '#myTeamTab' );
+    		contentTop = $lbc.position();
+
+    	$myTeamTab.css( 'top', contentTop.top );
+    	$myTeamTab.css( 'right', 0 ); // $('body').width() - 40 );
+    }(),
 
     getData = function() {
 		$.getJSON( dataEndpoint )

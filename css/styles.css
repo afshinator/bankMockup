@@ -163,6 +163,19 @@ body {
 }
 
 
+.cents {
+	position: absolute;
+	font-size: .85em;
+	color: #34495e;
+}
+
+#myTeamTab {
+	position: absolute;
+	width: 26px;
+	height: 88px;
+	background: url( ../img/tab.png ) top right no-repeat;
+}
+
 ul li:after {
     content: "";
     display: block;
@@ -218,7 +231,7 @@ section:first-of-type {
 /*	font-family: 'Montserrat', sans-serif;
 	font-weight: 100;*/
 	font-weight: lighter;
-	font-size: 1.9em;
+	font-size: 2.2em;
 	margin-top: .3em;
 	margin-bottom: 0;
 }
