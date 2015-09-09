@@ -1,12 +1,12 @@
 $(function() {
     var dataEndpoint = "http://localhost:8000/data/data.json",
-    	resizeTriggered = false,
-    	haveCents = false,
+    	resizeTriggered = false,		// browser resize sends too many events, this lets me handle it well
     	centsObj = {},
     	$rbc = $( '#rightBalancesCover' ),
     	$lbc = $( '#leftBalancesCover' ),
 
 
+    // Update the right side balances
     populateBalances = function( json ) {
     	var title, type, balance, xtra;
     	var $balance = $( '.balance' ),
@@ -38,6 +38,8 @@ $(function() {
     },
 
 
+    // Called when the browser is resized, takes care of fixing the layout of the
+    // balances on both the right and left sides.
     fixBalancePlacements = function() {
     	var $content = $('.content').eq(0),
     		p = $content.position();
@@ -53,6 +55,8 @@ $(function() {
     },
 
 
+    // The cents part of the balances, on the left side, need special attention since
+    // they have a unique look and placement.   
     updateCentsOnLeft = function() {
     	var $leftTopWrapper = $( '#left-topWrapper'),
     		$leftWrapper = $( '.left-wrapper' ),
@@ -80,6 +84,8 @@ $(function() {
     },
 
 
+    // Fill the Balances container (at the top of the page, right under navigation),
+    // uses the data loaded from json file.
     fillLeftBalances = function( json ) {
     	var bank = json.bank,
     		credit = json.credit,
@@ -94,7 +100,6 @@ $(function() {
     		loansC : loans.substring( loans.length - 2 )
     	};
 
-    	haveCents = true;
 
     	html = '<div id="left-topWrapper"><p class="left-heading">CHECKING, SAVINGS, & CDS</p>';
     	html += '<h3 class="left-amount">' + bank.substring( 0, bank.length - 3 ) + '</h3>';
@@ -120,6 +125,8 @@ $(function() {
     	updateCentsOnLeft();
     },
 
+
+    // Automatically place the right hand 'My Team' tab.
     placeTeamTab = function() {
     	var $myTeamTab = $( '#myTeamTab' );
     		contentTop = $lbc.position();
@@ -128,17 +135,20 @@ $(function() {
     	$myTeamTab.css( 'right', 0 ); // $('body').width() - 40 );
     }(),
 
+
+    // Automatically load the data from json file and update balances.
     getData = function() {
 		$.getJSON( dataEndpoint )
 			.done( populateBalances )
 			.fail( function( jqxhr, textStatus, error ) {
 				var err = textStatus + ", " + error;
-				console.log( "Request Failed: " + err );
+				console.error( "Request Failed: " + err );
 			}); 
     }();
 
 
-    // When the browser gets resized, update some of the placements
+    // When the browser gets resized, update some of the placements;
+    // The browser sends many resize events;  only catch one every so often to compensate
     $(window).on( 'resize', function() {
     	if ( resizeTriggered ) return;
     	else {

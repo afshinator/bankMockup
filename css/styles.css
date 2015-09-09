@@ -127,6 +127,7 @@ body {
 	float: right;
 	margin-top: 4px;
 	margin-left: 20px;
+	cursor: pointer;
 }
 
 #wellsfargo {
@@ -169,11 +170,19 @@ body {
 	color: #34495e;
 }
 
+
+#addAccountLink {
+	font-size: .65em;
+	color: #d59c2e;	
+}
+
+
 #myTeamTab {
 	position: absolute;
 	width: 26px;
 	height: 88px;
 	background: url( ../img/tab.png ) top right no-repeat;
+	cursor: pointer;	
 }
 
 ul li:after {
@@ -238,7 +247,6 @@ section:first-of-type {
 
 
 
-
 /* over-ride pure css */
 .pure-menu-horizontal {
     padding-top:23px;
@@ -247,6 +255,10 @@ section:first-of-type {
 .pure-menu-link {
     color: white;
     font-size: .9em;
+}
+
+.pure-menu-link:hover {
+	color: black;
 }
 
 footer {
